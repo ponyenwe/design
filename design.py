@@ -1,7 +1,3 @@
-###PT.1
-#Driver: Lily Muchimba
-#Navigator: Matthew Zou
-
 import math 
 
 #replicates and depicts the movement of a car
