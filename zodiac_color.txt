@@ -1,0 +1,93 @@
+Monday 
+Color: White
+
+========================================
+
+Tuesday 
+Color: Red
+
+========================================
+
+Wednesday 
+Color: Green
+
+========================================
+
+Thursday 
+Color: Yellow
+
+========================================
+
+Friday 
+Color: Pink
+
+========================================
+
+Saturday 
+Color: Purple
+
+========================================
+
+Sunday 
+Color: Orange
+
+========================================
+
+Aries
+Dates: March 21–April 19 
+
+========================================
+
+Taurus 
+Dates: April 20–May 20 
+
+========================================
+
+Gemini 
+Dates: May 21–June 20 
+
+========================================
+
+Cancer
+Dates: June 21–July 22 
+
+========================================
+
+Leo
+Dates: July 23–August 22 
+
+========================================
+
+Virgo
+Dates: August 23–September 22 
+
+========================================
+
+Libra
+Dates: September 23–October 22 
+Color: Pink
+
+========================================
+
+Scorpio
+Dates: October 23–November 21 
+
+========================================
+
+Sagittarius
+Dates: November 22–December 21 
+
+========================================
+
+Capricorn
+Dates: December 22–January 19 
+
+========================================
+
+Aquarius
+Dates: January 20–February 18 
+
+========================================
+
+Pisces
+Dates: February 19–March 20 
