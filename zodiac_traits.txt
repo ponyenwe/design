@@ -1,7 +1,5 @@
 Aries
-Dates: March 21 - April 20
 Personality Traits: Adventurous, Confident, Impulsive
-Compatibility:
 Great Match: Leo, Sagittarius, Gemini, Aquarius
 Favorable Match: Libra
 Not Favorable: Taurus, Cancer, Virgo, Capricorn, Pisces
@@ -9,9 +7,7 @@ Not Favorable: Taurus, Cancer, Virgo, Capricorn, Pisces
 ========================================
 
 Taurus
-Dates: April 21 - May 21
 Personality Traits: Reliable, Loyal, Stubborn
-Compatibility:
 Great Match: Virgo, Capricorn, Cancer, Pisces
 Favorable Match: Scorpio
 Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
@@ -19,9 +15,7 @@ Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
 ========================================
 
 Gemini
-Dates: May 22 - June 21
 Personality Traits: Versatile, Witty, Inquisitive
-Compatibility:
 Great Match: Libra, Aquarius, Aries, Leo
 Favorable Match: Sagittarius
 Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
@@ -29,9 +23,7 @@ Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
 ========================================
 
 Cancer
-Dates: June 22 - July 22
 Personality Traits: Emotional, Protective, Loyal
-Compatibility:
 Great Match: Scorpio, Pisces, Taurus, Virgo
 Favorable Match: Capricorn
 Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
@@ -39,9 +31,7 @@ Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
 ========================================
 
 Leo
-Dates: July 23 - August 21
-Key Personality Traits: Generous, Confident, Ambitious
-Compatibility:
+Personality Traits: Generous, Confident, Ambitious
 Great Match: Aries, Sagittarius, Gemini, Libra
 Favorable Match: Aquarius
 Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
@@ -49,9 +39,7 @@ Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
 ========================================
 
 Virgo
-Dates: August 22 - September 23
-Key Personality Traits: Modest, Analytical, Reliable
-Compatibility:
+Personality Traits: Modest, Analytical, Reliable
 Great Match: Taurus, Capricorn, Cancer, Scorpio
 Favorable Match: Pisces
 Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
@@ -59,9 +47,7 @@ Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
 ========================================
 
 Libra
-Dates: September 24 - October 23
-Key Personality Traits: Charming, Diplomatic, Sociable
-Compatibility:
+Personality Traits: Charming, Diplomatic, Sociable
 Great Match: Gemini, Aquarius, Leo, Sagittarius
 Favorable Match: Aries
 Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
@@ -69,9 +55,7 @@ Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
 ========================================
 
 Scorpio
-Dates: October 24 - November 22
-Key Personality Traits: Passionate, Resourceful, Determined
-Compatibility:
+Personality Traits: Passionate, Resourceful, Determined
 Great Match: Cancer, Pisces, Virgo, Capricorn
 Favorable Match: Taurus
 Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
@@ -79,9 +63,7 @@ Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
 ========================================
 
 Sagittarius
-Dates: November 23 - December 22
-Key Personality Traits: Optimistic, Independent, Honest
-Compatibility:
+Personality Traits: Optimistic, Independent, Honest
 Great Match: Aries, Leo, Libra, Aquarius
 Favorable Match: Gemini
 Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
@@ -89,9 +71,7 @@ Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
 ========================================
 
 Capricorn
-Dates: December 23 - January 20
-Key Personality Traits: Practical, Disciplined, Reserved
-Compatibility:
+Personality Traits: Practical, Disciplined, Reserved
 Great Match: Taurus, Virgo, Scorpio, Pisces
 Favorable Match: Cancer
 Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
@@ -99,9 +79,7 @@ Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
 ========================================
 
 Aquarius
-Dates: January 21 - February 19
-Key Personality Traits: Innovative, Humanitarian, Independent
-Compatibility:
+Personality Traits: Innovative, Humanitarian, Independent
 Great Match: Gemini, Libra, Sagittarius, Aries
 Favorable Match: Leo
 Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
@@ -109,9 +87,7 @@ Not Favorable: Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces
 ========================================
 
 Pisces
-Dates: February 20 - March 20
-Key Personality Traits: Compassionate, Imaginative, Intuitive
-Compatibility:
+Personality Traits: Compassionate, Imaginative, Intuitive
 Great Match: Cancer, Scorpio, Taurus, Capricorn
 Favorable Match: Virgo
 Not Favorable: Aries, Gemini, Leo, Libra, Sagittarius, Aquarius
