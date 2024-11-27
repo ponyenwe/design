@@ -9,28 +9,7 @@ import argparse
 from datetime import datetime
 
 class ZodiacTshirt:
-    """
-    Class to generate a personalized Zodiac T-shirt design based on user's birthdate.
-    
-    Attributes:
-        zodiac (str): The user's zodiac sign.
-        traits (str): Personality traits based on the zodiac sign.
-        color (str): Color assigned based on the weekday of the user's birthdate.
-        great_match (str): Zodiac signs that are considered great matches.
-        favorable_match (str): Zodiac signs that are considered favorable matches.
-        not_favorable_match (str): Zodiac signs that are considered not favorable matches.
-    """
-
     def __init__(self):
-        """
-        Initializes the attributes of the ZodiacTshirt class.
-        
-        Args:
-            None
-        
-        Returns:
-            None
-        """
         self.zodiac = ""
         self.traits = ""
         self.color = ""
@@ -39,15 +18,7 @@ class ZodiacTshirt:
         self.not_favorable_match = ""
 
     def get_zodiac_sign(self, birthdate):
-        """
-        Determines the zodiac sign based on the user's birthdate.
-        
-        Args:
-            birthdate (str): The user's birthdate in MM/DD/YYYY format.
-        
-        Returns:
-            str: The zodiac sign corresponding to the user's birthdate.
-        """
+        """Determines zodiac sign from the birthdate"""
         zodiac_dates = {
             "Capricorn": ((12, 22), (1, 19)),
             "Aquarius": ((1, 20), (2, 18)),
@@ -64,71 +35,62 @@ class ZodiacTshirt:
         }
 
         birth_date_obj = datetime.strptime(birthdate, "%m/%d/%Y")
-        birth_month = birth_date_obj.month
-        birth_day = birth_date_obj.day
+        month, day = birth_date_obj.month, birth_date_obj.day
 
         for sign, ((start_month, start_day), (end_month, end_day)) in zodiac_dates.items():
-            if ((birth_month == start_month and birth_day >= start_day) or
-                (birth_month == end_month and birth_day <= end_day)):
+            if ((month == start_month and day >= start_day) or (month == end_month and day <= end_day)):
                 return sign
 
     def get_color(self, weekday):
-        """
-        Returns the color for the T-shirt based on the weekday of the user's birthdate.
-        
-        Args:
-            weekday (str): The day of the week corresponding to the user's birthdate (e.g., Monday, Tuesday).
-        
-        Returns:
-            str: The color assigned to the T-shirt based on the weekday.
-        """
-        colors = {
-            "Monday": "Red", "Tuesday": "Orange", "Wednesday": "Yellow", 
-            "Thursday": "Green", "Friday": "Pink", "Saturday": "Blue", "Sunday": "Purple"
-        }
+        """Fetches color based on weekday from zodiac_color.txt"""
+        colors = {}
+        with open('zodiac_color.txt', 'r') as file:
+            lines = file.readlines()
+            day = None
+            for line in lines:
+                line = line.strip()
+                if line.startswith("Color:"):
+                    colors[day] = line.split(":")[1].strip()
+                elif line:
+                    day = line
         return colors.get(weekday, "Unknown")
 
     def get_traits(self, zodiac_sign):
-        """
-        Returns the personality traits and compatibility for a given zodiac sign.
-        
-        Args:
-            zodiac_sign (str): The zodiac sign for which the traits are needed.
-        
-        Returns:
-            dict: A dictionary containing the personality traits, great match, favorable match, and not favorable match for the zodiac sign.
-        """
-        traits = {
-            "Libra": {
-                "personality": "Charming, Diplomatic, Sociable",
-                "great_match": "Gemini, Aquarius, Leo, Sagittarius",
-                "favorable_match": "Aries",
-                "not_favorable_match": "Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces"
-            },
-            "Gemini": {
-                "personality": "Versatile, Witty, Inquisitive",
-                "great_match": "Libra, Aquarius, Aries, Leo",
-                "favorable_match": "Sagittarius",
-                "not_favorable_match": "Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces"
-            }
-        }
+        """Fetches traits and compatibility from zodiac_traits.txt"""
+        traits = {}
+        with open('zodiac_traits.txt', 'r') as file:
+            blocks = file.read().split("========================================")
+            for block in blocks:
+                block = block.strip()
+                if block:
+                    lines = block.splitlines()
+                    sign = lines[0].strip()
+                    personality, great_match, favorable_match, not_favorable_match = None, None, None, None
+                    for line in lines:
+                        if line.startswith("Personality Traits:"):
+                            personality = line.split(":")[1].strip()
+                        elif line.startswith("Great Match:"):
+                            great_match = line.split(":")[1].strip().split(", ")
+                        elif line.startswith("Favorable Match:"):
+                            favorable_match = line.split(":")[1].strip().split(", ")
+                        elif line.startswith("Not Favorable:"):
+                            not_favorable_match = line.split(":")[1].strip().split(", ")
+
+                    traits[sign] = {
+                        "personality": personality.split(", ") if personality else ["No traits available"],
+                        "great_match": great_match or [],
+                        "favorable_match": favorable_match or [],
+                        "not_favorable_match": not_favorable_match or []
+                    }
         return traits.get(zodiac_sign, {
-            "personality": "No traits available",
+            "personality": ["No traits available"],
             "great_match": "None",
             "favorable_match": "None",
             "not_favorable_match": "None"
         })
 
     def generate_tshirt(self, birthdate):
-        """
-        Generates the T-shirt design based on the user's birthdate and zodiac sign.
-        
-        Args:
-            birthdate (str): The user's birthdate in MM/DD/YYYY format.
-        
-        Returns:
-            str: The T-shirt design information, including zodiac sign, traits, color, and compatibility.
-        """
+        """Generates T-shirt design based on user's birthdate"""
         zodiac_sign = self.get_zodiac_sign(birthdate)
 
         birth_date_obj = datetime.strptime(birthdate, "%m/%d/%Y")
@@ -137,27 +99,23 @@ class ZodiacTshirt:
         color = self.get_color(weekday_name)
         zodiac_data = self.get_traits(zodiac_sign)
 
+        # Format compatibility and traits
+        great_match = ", ".join(zodiac_data['great_match']) if zodiac_data['great_match'] else "None"
+        favorable_match = ", ".join(zodiac_data['favorable_match']) if zodiac_data['favorable_match'] else "None"
+        not_favorable_match = ", ".join(zodiac_data['not_favorable_match']) if zodiac_data['not_favorable_match'] else "None"
+
         return f"""
 Your Zodiac T-Shirt Design:
 Zodiac Sign: {zodiac_sign}
-Personality Traits: {zodiac_data['personality']}
+Personality Traits: {', '.join(zodiac_data['personality'])}
 Color: {color} (based on your birth weekday: {weekday_name})
 Compatibility:
-Great Match: {zodiac_data['great_match']}
-Favorable Match: {zodiac_data['favorable_match']}
-Not Favorable Match: {zodiac_data['not_favorable_match']}
-        """
+Great Match: {great_match}
+Favorable Match: {favorable_match}
+Not Favorable Match: {not_favorable_match}"""
 
 def main():
-    """
-    Main function to parse the arguments and generate the T-shirt design.
-    
-    Args:
-        None
-    
-    Returns:
-        None
-    """
+    """Main function to run the program"""
     parser = argparse.ArgumentParser(description="Get a personalized zodiac T-shirt design.")
     parser.add_argument("--birthdate", type=str, required=True, help="Enter your birthdate in MM/DD/YYYY format.")
     
