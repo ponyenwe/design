@@ -9,6 +9,17 @@ import argparse
 from datetime import datetime
 
 class ZodiacTshirt:
+  """
+    Zodiac T-shirt that represents traits and matches.
+    
+    Description:
+      zodiac(str): sign relevant to the Shirt.
+      traits(str): brief summary of the sign's traits
+      color(str): sign's color
+      great_match(str): favorite sign matches
+      favorable_match(str): good sign matches
+      not_favorable_match(str): poor sign matches
+    """
     def __init__(self):
         self.zodiac = ""
         self.traits = ""
@@ -18,7 +29,14 @@ class ZodiacTshirt:
         self.not_favorable_match = ""
 
     def get_zodiac_sign(self, birthdate):
-        """Determines zodiac sign from the birthdate"""
+        """
+        Determines zodiac sign from the birthdate.
+        
+        Args:
+          birthdate: user's date of birth and time
+        Returns:
+          str: zodiac sign correlating to date of birth
+        """
         zodiac_dates = {
             "Capricorn": ((12, 22), (1, 19)),
             "Aquarius": ((1, 20), (2, 18)),
@@ -42,7 +60,15 @@ class ZodiacTshirt:
                 return sign
 
     def get_color(self, weekday):
-        """Fetches color based on weekday from zodiac_color.txt"""
+        """
+        Fetches color based on weekday from zodiac_color.txt.
+        
+        Args:
+          weekday(str): Whichever day of the week
+          
+        Returns:
+          str: t-shirt color associated to weekday.
+        """
         colors = {}
         with open('zodiac_color.txt', 'r') as file:
             lines = file.readlines()
@@ -56,7 +82,15 @@ class ZodiacTshirt:
         return colors.get(weekday, "Unknown")
 
     def get_traits(self, zodiac_sign):
-        """Fetches traits and compatibility from zodiac_traits.txt"""
+        """
+        Fetches traits and compatibility from zodiac_traits.txt.
+
+         Args:
+          zodiac_sign: user's sign.
+
+        Returns:
+          str: sign's traits and compatibility.
+        """
         traits = {}
         with open('zodiac_traits.txt', 'r') as file:
             blocks = file.read().split("========================================")
