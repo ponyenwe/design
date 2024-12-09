@@ -90,7 +90,15 @@ class ZodiacTshirt:
         })
 
     def generate_tshirt(self, birthdate):
-        """Generates T-shirt design based on user's birthdate"""
+        """
+        Generates T-shirt design based on user's birthdate
+        
+        Args:
+            birthdate (str): User's birthdate in MM/DD/YYYY format.
+        
+        Returns:
+            str: A formatted string with T-shirt design details
+        """
         zodiac_sign = self.get_zodiac_sign(birthdate)
 
         birth_date_obj = datetime.strptime(birthdate, "%m/%d/%Y")
@@ -115,7 +123,10 @@ Favorable Match: {favorable_match}
 Not Favorable Match: {not_favorable_match}"""
 
 def main():
-    """Main function to run the program"""
+    """
+    Main function to run the program. Parses command-line arguments and generates a 
+    personalized t-shirt design based on the users birthdate
+    """
     parser = argparse.ArgumentParser(description="Get a personalized zodiac T-shirt design.")
     parser.add_argument("--birthdate", type=str, required=True, help="Enter your birthdate in MM/DD/YYYY format.")
     
