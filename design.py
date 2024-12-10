@@ -155,6 +155,24 @@ Compatibility:
 Great Match: {great_match}
 Favorable Match: {favorable_match}
 Not Favorable Match: {not_favorable_match}"""
+      
+      def create_image(self, zodiac_sign, color, weekday_name, zodiac_data):
+        """Creates and saves an image with the T-shirt design"""
+        img = Image.new('RGB', (800, 800), "white")
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.load_default()
+
+        text = f"""
+        Zodiac Sign: {zodiac_sign}
+        Personality Traits: {', '.join(zodiac_data['personality'])}
+        Color: {color} (based on {weekday_name})
+        Compatibility:
+        Great Match: {', '.join(zodiac_data['great_match'])}
+        Favorable Match: {', '.join(zodiac_data['favorable_match'])}
+        Not Favorable Match: {', '.join(zodiac_data['not_favorable_match'])}
+        """
+        draw.multiline_text((50, 50), text, fill="black", font=font)
+        img.save(f"{zodiac_sign}_tshirt.png")
 
 def main():
     """
