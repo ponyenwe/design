@@ -158,7 +158,7 @@ Not Favorable Match: {not_favorable_match}"""
       
       def create_image(self, zodiac_sign, color, weekday_name, zodiac_data):
         """Creates and saves an image with the T-shirt design"""
-        img = Image.new('RGB', (800, 800), "white")
+        img = Image.new('RGB', (800, 800), color)
         draw = ImageDraw.Draw(img)
         font = ImageFont.load_default()
 
