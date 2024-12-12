@@ -7,9 +7,10 @@ The front of the T-shirt will have a zodiac sign along with complementary charac
 
 import argparse
 from datetime import datetime
+from PIL import Image, ImageDraw, ImageFont
 
 class ZodiacTshirt:
-  """
+    """
     Zodiac T-shirt that represents traits and matches.
     
     Description:
@@ -69,7 +70,7 @@ class ZodiacTshirt:
         Returns:
           str: t-shirt color associated to weekday.
         """
-        colors = {}
+        colors = {} 
         with open('zodiac_color.txt', 'r') as file:
             lines = file.readlines()
             day = None
@@ -84,10 +85,8 @@ class ZodiacTshirt:
     def get_traits(self, zodiac_sign):
         """
         Fetches traits and compatibility from zodiac_traits.txt.
-
          Args:
           zodiac_sign: user's sign.
-
         Returns:
           str: sign's traits and compatibility.
         """
@@ -146,6 +145,8 @@ class ZodiacTshirt:
         favorable_match = ", ".join(zodiac_data['favorable_match']) if zodiac_data['favorable_match'] else "None"
         not_favorable_match = ", ".join(zodiac_data['not_favorable_match']) if zodiac_data['not_favorable_match'] else "None"
 
+        self.create_image(zodiac_sign, color, weekday_name, zodiac_data)
+
         return f"""
 Your Zodiac T-Shirt Design:
 Zodiac Sign: {zodiac_sign}
@@ -155,10 +156,20 @@ Compatibility:
 Great Match: {great_match}
 Favorable Match: {favorable_match}
 Not Favorable Match: {not_favorable_match}"""
-      
-      def create_image(self, zodiac_sign, color, weekday_name, zodiac_data):
-        """Creates and saves an image with the T-shirt design"""
-        img = Image.new('RGB', (800, 800), color)
+
+    def create_image(self, zodiac_sign, color, weekday_name, zodiac_data):
+        """ Creates and saves an image with the T-shirt design. 
+        
+        Args: 
+            zodiac_sign (str): The zodiac sign of the user. 
+            color (str): The color associated with the user's birth weekday. 
+            weekday_name (str): The name of the weekday when the user was born. 
+            zodiac_data (dict): A dictionary containing the user's zodiac traits and compatibility information. 
+
+        Returns:
+            None 
+        """
+        img = Image.new('RGB', (800, 800), color)  # Use the personalized color
         draw = ImageDraw.Draw(img)
         font = ImageFont.load_default()
 
@@ -173,6 +184,7 @@ Not Favorable Match: {not_favorable_match}"""
         """
         draw.multiline_text((50, 50), text, fill="black", font=font)
         img.save(f"{zodiac_sign}_tshirt.png")
+
 
 def main():
     """
