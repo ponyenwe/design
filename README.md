@@ -21,12 +21,12 @@ Welcome to the **Zodiac Sign T-Shirts** program! This application generates pers
 To generate a T-shirt design, run the script with your birthdate as an argument:
 
 ```bash
-python zodiac_tshirt.py --birthdate MM/DD/YYYY
+python design.py --birthdate MM/DD/YYYY
 ```
 
 ### Example:
 ```bash
-python zodiac_tshirt.py --birthdate 08/15/1995
+python design.py --birthdate 08/15/1995
 ```
 
 ### Output:
@@ -35,7 +35,7 @@ python zodiac_tshirt.py --birthdate 08/15/1995
   Your Zodiac T-Shirt Design:
   Zodiac Sign: Leo
   Personality Traits: Confident, Charismatic, Ambitious
-  Color: Gold (based on your birth weekday: Tuesday)
+  Color: Yellow (based on your birth weekday: Tuesday)
   Compatibility:
   Great Match: Sagittarius, Aries
   Favorable Match: Gemini, Libra
